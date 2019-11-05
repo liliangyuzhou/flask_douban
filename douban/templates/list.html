@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}列表{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/list.css') }}">
+{% endblock %}
+
+{% from 'macros.html' import ItemGroupTop,ItemGroupMiddle %}
+
+{% block body %}
+    {% for item in items %}
+        {{ ItemGroupMiddle(item.thumbnail,item.title,item.rating) }}
+    {% endfor %}
+{% endblock %}

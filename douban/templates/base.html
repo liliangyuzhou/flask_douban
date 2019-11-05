@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}-知了课堂</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/base.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+<div class="list-group">
+    <div class="search-group">
+        <input type="text" placeholder="搜索..." name="search" class="list-group-search">
+    </div>
+  {% block body %}
+  这是公共页面
+  {% endblock %}
+</div>
+</body>
+</html>

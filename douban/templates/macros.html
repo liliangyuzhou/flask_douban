@@ -1,0 +1,45 @@
+{% macro ItemGroupMiddle(thumbnail,title,rating) %}
+     <div class="item-group-middle">
+        <img class="photo" src="{{ thumbnail }}" alt="">
+        <p class="item-title">{{ title }}</p>
+        <p class="item-rating">
+
+            {% set lights=((rating |int)/2)|int %}
+            {% set halights= (rating|int)%2 %}
+            {% set grays=5-lights-halights %}
+
+            {% for light in range(0,lights) %}
+                <img src="{{ url_for('static',filename='images/rate_light.png') }}" alt="">
+            {% endfor %}
+
+            {% for halight in range(0,halights) %}
+                <img src="{{ url_for('static',filename='images/rate_half.png') }}" alt="">
+            {% endfor %}
+
+            {% for gray in range(0,grays) %}
+                <img src="{{ url_for('static',filename='images/rate_gray.png') }}" alt="">
+            {% endfor %}
+
+            {{ rating }}
+
+        </p>
+
+
+    </div>
+
+{% endmacro %}
+
+
+{% macro ItemGroupTop(modle_title,movies,category) %}
+    <div class="item-group-top">
+        <span class="item-group-title">{{ modle_title }}</span>
+        <a href="{{ url_for('my_list',category=category) }}" class="list-group-more">更多</a>
+    </div>
+    <div class="list-list-display">
+    {% for movie in movies[0:3] %}
+        {{ ItemGroupMiddle(movie.thumbnail,movie.title,movie.rating) }}
+    {% endfor %}
+
+
+    </div>
+{% endmacro %}

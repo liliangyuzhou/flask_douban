@@ -1,0 +1,46 @@
+.item-group-top {
+    overflow: hidden;
+    padding: 14px 8px;
+}
+
+.list-group-search {
+    float: left;
+}
+
+.list-group-more {
+    float: right;
+
+}
+
+.item-group-middle {
+    float: left;
+    margin-right: 10px;
+    width: 100px;
+    height: 210px;
+
+}
+
+.item-group-middle .item-title {
+    text-align: center;
+}
+
+.item-group-middle .photo {
+    display: block;
+    width: 100px;
+    height: 150px;
+    padding: 8px;
+}
+
+.item-group-middle .item-rating {
+    font-size: 12px;
+    text-align: center;
+}
+
+.item-group-middle .item-rating img {
+    width: 10px;
+    height: 10px;
+}
+.list-list-display{
+      overflow: hidden;
+    padding: 0 10px;
+}

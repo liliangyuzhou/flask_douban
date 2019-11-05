@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+列表
+{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/list.css') }}">
+{% endblock %}
+{% from 'macros.html' import ItemGroupTop,ItemGroupMiddle %}
+{% block body %}
+    {{ ItemGroupTop('电影',movies,1) }}
+    {{ ItemGroupTop('电视剧',tvs,2) }}
+{% endblock %}
